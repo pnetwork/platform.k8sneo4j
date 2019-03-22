@@ -6,7 +6,9 @@
  * node label: ptnodetype=datanode
 
 ## exeute
- ./run.sh {namespace}
+ ./setlabel 
+ ./parser.sh {namespace} : it will parse the file to from Jenkins
+ ./run.sh {namespace} : it will launch all stuff in deploy directory for deployment
 
 ## check result
 ./check log : make sure the 0 node's status (defualt)

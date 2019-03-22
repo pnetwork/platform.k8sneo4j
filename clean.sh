@@ -6,7 +6,5 @@ NSC="default"
 NSC=${NSC_IN:-$NSC}
 
 
-#./parser.sh ${NSC}
-
-kubectl apply -f ./deploy -n ${NSC}
+rm ./deploy/* -rf
 
