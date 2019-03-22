@@ -11,6 +11,16 @@ spec:
         app: neo4j
         component: core
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - neo4j
+            topologyKey: kubernetes.io/hostname
       containers:
       - name: neo4j
         image: "neo4j:3.3.2-enterprise"
@@ -56,11 +66,13 @@ spec:
         - name: datadir
           mountPath: "/data"
       volumes:
-       - name: datadir
-         hostPath:
-           path: /data/neo4j/jj
        #- name: datadir
-       #  emptyDir: {}
+       #  hostPath:
+       #    path: /opt/neo4j/default
+       - name: datadir
+         emptyDir: {}
+      nodeSelector:
+        ptnodetype: "datanode"
 #  volumeClaimTemplates:
 #    - metadata:
 #        name: datadir

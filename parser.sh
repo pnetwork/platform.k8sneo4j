@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd "$(dirname "$0")"
 #NODE_IN=$2
 #NODE="0"
 #NODE=${NODE_IN:-$NODE}
