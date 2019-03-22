@@ -2,7 +2,7 @@ apiVersion: "apps/v1beta1"
 kind: StatefulSet
 metadata:
   name: neo4j-core
-  namespace: ${ptnamespace}
+  namespace: jj
 spec:
   serviceName: neo4j
   replicas: 3
@@ -69,7 +69,7 @@ spec:
       volumes:
        - name: datadir
          hostPath:
-           path: ${NEO4JDIR}/${ptnamespace}
+           path: /opt/neo4j/jj
        #- name: datadir
        #  emptyDir: {}
       nodeSelector:

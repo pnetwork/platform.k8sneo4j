@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 
 NSC_IN=$1
 NSC="default"
-export NSC=${NSC_IN:-$NSC}
+export ptnamespace=${NSC_IN:-$NSC}
 
 export NEO4JDIR="/opt/neo4j"
 
@@ -23,7 +23,7 @@ fi
 
 
 envsubst < ./template/neo4j.yml.j2 > ./deploy/neo4j.yml
-envsubst < ./template/dns.yml > ./deploy/dns.yml
+envsubst < ./template/dns.yml.j2 > ./deploy/dns.yml
 
 
 
