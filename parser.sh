@@ -9,7 +9,7 @@ NSC_IN=$1
 NSC="default"
 export NSC=${NSC_IN:-$NSC}
 
-export NEO4JDIR="/data/neo4j"
+export NEO4JDIR="/opt/neo4j"
 
 if [ "$1" == "-h" ] ; then
     echo "Usage: `basename $0` [-h]"
