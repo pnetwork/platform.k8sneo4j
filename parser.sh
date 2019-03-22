@@ -22,8 +22,8 @@ fi
 
 
 
-envsubst < ./template/neo4j.yml.j2 > ./deploy/neo4j.yml
-envsubst < ./template/dns.yml.j2 > ./deploy/dns.yml
+envsubst < ./template/neo4j.yml > ./deploy/neo4j.yml
+envsubst < ./template/dns.yml > ./deploy/dns.yml
 
 
 
