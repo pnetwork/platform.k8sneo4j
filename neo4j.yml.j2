@@ -66,11 +66,11 @@ spec:
         - name: datadir
           mountPath: "/data"
       volumes:
-       #- name: datadir
-       #  hostPath:
-       #    path: ${NEO4JDIR}/${NSC}
        - name: datadir
-         emptyDir: {}
+         hostPath:
+           path: ${NEO4JDIR}/${NSC}
+       #- name: datadir
+       #  emptyDir: {}
       nodeSelector:
         ptnodetype: "datanode"
 #  volumeClaimTemplates:
