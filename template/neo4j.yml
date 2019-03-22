@@ -39,6 +39,14 @@ spec:
             value: "neo4j:5000"
           - name: NEO4J_ACCEPT_LICENSE_AGREEMENT
             value: "yes"
+          - name: NEO4J_dbms.logs.query.allocation_logging_enabled
+            value: "true"
+          - name: NEO4J_dbms.logs.query.enabled
+            value: "true"
+          - name: NEO4J_dbms.logs.query.page_logging_enabled
+            value: "true"
+          - name: NEO4J_dbms.logs.query.time_logging_enabled
+            value: "true"
         command:
           - "/bin/bash"
           - "-ecx"
@@ -66,10 +74,16 @@ spec:
         volumeMounts:
         - name: datadir
           mountPath: "/data"
+        - name: config
+          mountPath: "conf/neo4j.conf"
+          readOnly: true
       volumes:
        - name: datadir
          hostPath:
            path: ${NEO4JDIR}/${ptnamespace}
+       - name: config
+         configMap:
+            name: neo4j-config
        #- name: datadir
        #  emptyDir: {}
       nodeSelector:

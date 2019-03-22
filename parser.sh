@@ -24,6 +24,7 @@ fi
 
 envsubst < ./template/neo4j.yml > ./deploy/neo4j.yml
 envsubst < ./template/dns.yml > ./deploy/dns.yml
+envsubst < ./template/configmap.yml > ./deploy/configmap.yml
 
 
 
