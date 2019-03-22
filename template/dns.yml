@@ -15,6 +15,9 @@ spec:
     - port: 6362
       targetPort: 6362
       name: backup
+    - port: 7687
+      targetPort: 7687
+      name: bolt
   selector:
     app: neo4j
     component: core
