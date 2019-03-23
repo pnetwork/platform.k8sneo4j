@@ -74,6 +74,8 @@ spec:
         volumeMounts:
         - name: datadir
           mountPath: "/data"
+        - name: logdir
+          mountPath: "/var/lib/neo4j/logs"
         - name: config
           mountPath: "conf/neo4j.conf"
           subPath: neo4j.conf
@@ -81,6 +83,9 @@ spec:
        - name: datadir
          hostPath:
            path: ${NEO4JDIR}/${ptnamespace}
+       - name: logdir
+         hostPath:
+           path: ${NEO4JDIR}/logs/${ptnamespace}
        - name: config
          configMap:
             name: neo4j-config
