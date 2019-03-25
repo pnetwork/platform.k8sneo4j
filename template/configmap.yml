@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: neo4j-config
+  namespace: ${ptnamespace}
 data:
   neo4j.conf: |
     ---
