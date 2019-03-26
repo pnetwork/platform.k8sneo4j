@@ -28,7 +28,7 @@ spec:
         imagePullPolicy: "IfNotPresent"
         env:
           - name: NEO4J_AUTH
-            value: neo4j/test
+            value: neo4j/pentium
         ports:
         - containerPort: 7474
           name: browser
