@@ -30,7 +30,7 @@ spec:
           - name: NEO4J_dbms_mode
             value: CORE
           - name: NUMBER_OF_CORES
-            value: "3"
+            value: "1"
           - name: NEO4J_dbms_security_auth__enabled
             value: "false"
           - name: NEO4J_causal__clustering_discovery__type
