@@ -21,3 +21,22 @@ spec:
   selector:
     app: neo4j
     component: core
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: neo4j-n
+  namespace: ${ptnamespace}
+  labels:
+    app: neo4j
+    component: core
+spec:
+  ports:
+  - name: neo4jconnect
+    protocol: TCP
+    port: 7474
+    targetPort: 7474
+  type: NodePort
+  selector:
+    app: neo4j
+    component: core
