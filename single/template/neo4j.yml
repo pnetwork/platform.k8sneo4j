@@ -24,11 +24,13 @@ spec:
             topologyKey: kubernetes.io/hostname
       containers:
       - name: neo4j
-        image: "neo4j:latest"
+        image: "neo4j:3.5-enterprise"
         imagePullPolicy: "IfNotPresent"
         env:
           - name: NEO4J_AUTH
             value: neo4j/pentium
+          - name: NEO4J_ACCEPT_LICENSE_AGREEMENT
+            value: "yes"
         ports:
         - containerPort: 7474
           name: browser
