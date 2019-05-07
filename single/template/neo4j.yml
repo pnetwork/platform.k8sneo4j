@@ -25,7 +25,8 @@ spec:
       containers:
       - name: neo4j
         #image: "neo4j:3.5-enterprise"
-        image: "neo4j:3.5.5-enterprise"
+        #image: "neo4j:3.5.5-enterprise"
+        image: "neo4j:3.4.7-enterprise"
         imagePullPolicy: "IfNotPresent"
         env:
           - name: NEO4J_AUTH
