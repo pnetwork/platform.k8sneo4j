@@ -2,7 +2,7 @@ apiVersion: "apps/v1beta1"
 kind: StatefulSet
 metadata:
   name: neo4j-core
-  namespace: neo4j-unlog
+  namespace: platformteam
 spec:
   serviceName: neo4j
   replicas: 1
@@ -55,16 +55,16 @@ spec:
       volumes:
        - name: datadir
          hostPath:
-           path: /opt/neo4j/neo4j-unlog
+           path: /opt/neo4j/platformteam
        - name: logdir
          hostPath:
-           path: /opt/neo4j/logs/neo4j-unlog
+           path: /opt/neo4j/logs/platformteam
        - name: import
          hostPath:
-           path: /opt/neo4j/import/neo4j-unlog
+           path: /opt/neo4j/import/platformteam
        - name: plugin
          hostPath:
-           path: /opt/neo4j/plugin/neo4j-unlog
+           path: /opt/neo4j/plugin/platformteam
        #- name: config
        #  configMap:
        #     name: neo4j-config
